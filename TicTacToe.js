@@ -9,12 +9,14 @@ function Square(props) {
   );
 }
 
-class Board extends React.Component {
+class Board extends React.Component { // compare with function Board(props)
+  // that will allow us to use a closure
   renderSquare(i) {
-    return <Square value={this.props.squares[i]}  onClick={() => this.props.onClick(i) } />;
+    return <Square value={this.props.squares[i]}  onClick={() => this.props.onClick(i) } />; // no this?
   }
 
   render() {
+    // no this below either
     return (
       <div>
         <div className="status">{status}</div>
